@@ -1,0 +1,9 @@
+[tool.poetry]
+name = "Password generator"
+version = "0.0.1"
+authors = ["loulct"]
+description = "Password generator"
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+PyQt6 = "^6.9.1"
