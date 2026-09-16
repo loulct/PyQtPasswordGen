@@ -11,5 +11,10 @@ __pycache__/
 *.log
 
 # build
+*.spec
 dist/
+build/
 *.egg-info/
+*.AppImage
+*.svg
+AppDir/
