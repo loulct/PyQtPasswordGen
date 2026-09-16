@@ -21,4 +21,5 @@ uv run __main__.py
 ## Build
 
 ```
+./build.sh
 ```
