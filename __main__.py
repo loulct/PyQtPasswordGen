@@ -1,4 +1,4 @@
-"""_summary_"""
+"""PyQtPasswordGen __main__ file"""
 
 from logging import INFO, Logger, basicConfig, getLogger
 from random import choice, randint
@@ -19,18 +19,18 @@ from PyQt6.QtWidgets import (
 
 
 class PasswordGenApp(QMainWindow):
-    """_summary_
+    """Main `Password Generator` app window.
 
     Args:
-        CoreMainWindow (_type_): _description_
+        QMainWindow (class): Main window PyQt class.
     """
 
     def __init__(self, logger: Logger, title: str):
-        """_summary_
+        """__init__
 
         Args:
-            logger (Logger): _description_
-            title (str): _description_
+            logger (Logger): Logger instance.
+            title (str): Window title.
         """
         super().__init__()
         self.logger = logger
@@ -40,8 +40,8 @@ class PasswordGenApp(QMainWindow):
         self.output = ""
 
         self.spin_box = QSpinBox()
-        self.spin_box.setRange(0, 16)
-        self.spin_box.setValue(12)
+        self.spin_box.setRange(0, 24)
+        self.spin_box.setValue(16)
 
         self.numbers = QCheckBox("Add numbers (0-9)")
         self.numbers.setChecked(True)
@@ -80,10 +80,12 @@ class PasswordGenApp(QMainWindow):
         container.setLayout(layout)
 
         self.setCentralWidget(container)
+        self.adjustSize()
+        self.setFixedSize(self.minimumSizeHint())
         self.show()
 
     def generate(self):
-        """_summary_"""
+        """Generate password and updates output string."""
         self.pool = []
         if self.numbers.isChecked():
             self.pool.append(digits)
