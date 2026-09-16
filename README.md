@@ -1,1 +1,24 @@
-# QtPasswordGen
+# PyQtPasswordGen
+
+## Releases
+
+- [0.1.0](https://github.com/loulct/PyQtPasswordGen/releases/tag/0.1.0)
+
+## Install Dependencies
+
+Install [uv](https://docs.astral.sh/uv/#installation).
+
+Then run the command below to read the lockfile, create the virtual environment and install required dependencies.
+```
+uv sync
+```
+
+Run program using the command below.
+```
+uv run __main__.py
+```
+
+## Build
+
+```
+```

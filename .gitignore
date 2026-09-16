@@ -1,2 +1,15 @@
-**/__pycache__
+# tools
+.ropeproject/
+
+# uv
+.venv/
+
+# Python
+__pycache__/
+
+# app
 *.log
+
+# build
+dist/
+*.egg-info/

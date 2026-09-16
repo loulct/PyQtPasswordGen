@@ -1,20 +1,21 @@
 """_summary_"""
 
+from logging import INFO, Logger, basicConfig, getLogger
+from random import choice, randint
+from string import ascii_lowercase, ascii_uppercase, digits, punctuation
+from sys import argv
+
+from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (
     QApplication,
     QCheckBox,
+    QLineEdit,
+    QMainWindow,
+    QPushButton,
+    QSpinBox,
     QVBoxLayout,
     QWidget,
-    QPushButton,
-    QLineEdit,
-    QSpinBox,
-    QMainWindow,
 )
-from PyQt6.QtCore import Qt
-from logging import getLogger, basicConfig, INFO, Logger
-from sys import argv
-from random import choice, randint
-from string import digits, ascii_lowercase, ascii_uppercase, punctuation
 
 
 class PasswordGenApp(QMainWindow):
@@ -94,7 +95,7 @@ class PasswordGenApp(QMainWindow):
             self.pool.append(punctuation)
 
         if len(self.pool) != 0:
-            for _ in range(0, self.spin_box.value()):
+            for _ in range(self.spin_box.value()):
                 self.output += str(choice(self.pool[randint(0, len(self.pool) - 1)]))
 
         self.label.setText(self.output)
